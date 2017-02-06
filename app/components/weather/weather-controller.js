@@ -31,7 +31,7 @@
 		computed: {
 			displayWeather: function () {
 				if (this.weather.main) {
-					return { temp: (this.weather.main.temp - 273.15).toFixed(2) }
+					return { temp: (this.weather.main.temp - 273.15).toFixed(0) }
 				}
 				return { temp: 'whoops ...out of luck' }
 				// displayWeather(this.convertTemp)
