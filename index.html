@@ -1,0 +1,90 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Inspire</title>
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body id="body">
+	<div class="container-fluid">
+
+		<div id="backgroundImage">
+			<img :src="image.url">
+		</div>
+		<div class="row" id="weather">
+
+			<div class="col-xs-offset-10 col-xs-2">
+				<h3>{{displayWeather.temp}}&deg; <br></h3>
+				<h4>{{displayTown.name}} </h4>
+			</div>
+		</div>
+		<!--<div v-for="(temp in temp)">-->
+		<!--<div :class="{completed:item.completed}" @click="toggleTemp(temp)">-->
+
+		<!--</div>-->
+		<div class="row">
+			<div class="col-xs-offset-3 col-xs-6 col-xs-offset-3">
+				<br>
+				<br>
+				<br>
+				<br>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-offset-2 col-xs-4" id="quote">
+
+				<span class="quote"><h3>"<strong><u>{{quote.quote}}</u></strong>"</h3></span>
+				<span class="author"><h4>- {{quote.author}}</h4></span>
+
+			</div>
+			<div class="col-xs-offset-3 col-xs-3">
+				<div id="todo">
+					<div id="root">
+						<form @submit.prevent="submitTodo(todo)">
+							<input type="text" v-model="todo" placeholder="add todo">
+						</form>
+
+						<div class="todos" id="TheDos">
+							<span>{{todos.length}} to do <br></span>
+							<ul v-for="(item, index) in todos">
+								<div :class="{completed:item.completed}" @click="completedTodo(item)">
+									<li>
+										<span><strong>{{item.task}}</strong></span>
+										<button type="button" @click="removeItem(item)">&#10006</button>
+									</li>
+								</div>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<!--JS Libraries-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+	<!--Initialize App-->
+	<script src="app/init.js"></script>
+	<script src="app/components/weather/weather-service.js"></script>
+	<script src="app/components/image/image-service.js"></script>
+	<script src="app/components/quote/quote-service.js"></script>
+	<script src="app/components/todo/todo-service.js"></script>
+
+	<!--Load your scripts below-->
+	<script src="app/components/weather/weather-controller.js"></script>
+	<script src="app/components/image/image-controller.js"></script>
+	<script src="app/components/quote/quote-controller.js"></script>
+	<script src="app/components/todo/todo-controller.js"></script>
+
+</body>
+
+</html>

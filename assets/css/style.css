@@ -1,0 +1,52 @@
+ .author{
+    display:none;
+    position: relative;
+    z-index: 0;
+}
+
+#quote:hover .author{
+    display: block;
+    position: relative;
+    z-index: 0;
+}
+#weather{
+    display: block;
+    position: relative;
+    color: orangered;
+}
+
+#backgroundImage img{  
+    height: 100%;
+    width: 100%;  
+    background-image: cover;
+    position: fixed;
+    z-index: -1;
+    opacity: 0.85;    
+}
+#quote{
+    top: 215px;
+    left: 200px;
+    position: relative;
+    z-index: 0;
+    color: darkblue;
+}
+
+form{
+    text-align: left;
+    position: relative;
+    z-index: 0; 
+}
+
+.completed{
+    text-decoration: line-through;
+     position: relative;
+    z-index: 0; 
+}
+#todo{
+    top: 250px;
+    left: 0px;
+    display: block;
+     position: relative;
+    z-index: 0; 
+    color: black;
+}
