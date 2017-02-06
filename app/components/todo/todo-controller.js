@@ -24,6 +24,7 @@
 			removeItem(todo){
 				var i = this.todos.indexOf(todo)
 				this.todos.splice(i,1)
+				ts.saveTodos(this.todos)
 			},
 			completedTodo(todo){
 				todo.completed = !todo.completed
